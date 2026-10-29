@@ -1,0 +1,11 @@
+# Chạy MongoDB local nhanh để dev (không cần cài Mongo).
+# Dùng: docker compose up -d   rồi đặt MONGO_URI=mongodb://127.0.0.1:27017/ops_reports
+services:
+  mongo:
+    image: mongo:7
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+volumes:
+  mongo_data:
